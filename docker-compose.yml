@@ -1,7 +1,14 @@
 version: "3.8"
 
 services: 
-################################################       
+################################################ 
+#######Tengine      
+    tengine:
+        image: ${DOCKER_USER}/tengine
+        build:
+          context: ./tengine
+          args:
+            - TENGINE_VERSION=2.3.3
 #######PHP7.1-FPM 
     php-7.1-fpm:
         image: ${DOCKER_USER}/php:7.1-fpm
