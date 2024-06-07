@@ -40,16 +40,29 @@ docker-compose build php-7.4-cli
 
 ### 构建命令
 
-`docker-compose build php-7.1-fpm` 1
+`docker-compose build php-7.1-fpm`
 
-`docker-compose build php-7.3-fpm` 1
+`docker-compose build php-7.3-fpm`
 
-`docker-compose build php-7.4-fpm` 1
+`docker-compose build php-7.4-fpm`
 
 `docker-compose build php-8.2-fpm`
 
-`docker-compose build php-7.1-cli` 1
+`docker-compose build php-7.1-cli`
 
-`docker-compose build php-7.4-cli` 1
+`docker-compose build php-7.4-cli`
 
 `docker-compose build php-8.2-cli`
+
+### 推送到阿里云镜像仓库
+
+```shell
+## 登录
+docker logout
+docker login --username=XXX registry.cn-hangzhou.aliyuncs.com
+## 推送
+docker tag linyiyong/php:7.1-cli registry.cn-hangzhou.aliyuncs.com/linyiyong/php:7.1-cli
+docker push registry.cn-hangzhou.aliyuncs.com/linyiyong/php:7.1-cli
+## 拉取
+docker pull registry.cn-hangzhou.aliyuncs.com/linyiyong/php:7.1-cli
+```
