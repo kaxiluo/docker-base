@@ -75,3 +75,9 @@ imagick swoole xdebug xhprof
 **构建命令**
 
 `docker-compose build tengine`
+
+## Magento
+
+已安装nginx
+
+`docker-compose build magento-php7.4`

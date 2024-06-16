@@ -109,3 +109,10 @@ services:
             - INSTALL_SWOOLE=true
             - INSTALL_XDEBUG=false
             - INSTALL_XHPROF=false
+#######Magento
+    magento-php7.4:
+        image: ${DOCKER_USER}/magento:php7.4
+        build:
+          context: ./magento
+          args:
+            - PHP_VERSION=7.4           
