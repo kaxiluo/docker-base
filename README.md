@@ -70,6 +70,10 @@ imagick swoole xdebug xhprof
 
 `docker-compose build php-8.2-cli`
 
+## Hyperf
+
+`hyperf:8.2-alpine-v3.19-swoole`
+
 ## Tengine
 
 **构建命令**
