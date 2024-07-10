@@ -54,23 +54,19 @@ imagick swoole xdebug xhprof
 
 **构建命令**
 
-`docker-compose build php-7.1-fpm`
+`docker-compose build php-7.1-fpm php-7.3-fpm php-7.4-fpm php-8.2-fpm` 
 
-`docker-compose build php-7.3-fpm`
+`docker-compose build php-7.1-cli php-7.4-cli php-8.2-cli`
 
-`docker-compose build php-7.4-fpm`
+**镜像**
 
-`docker-compose build php-8.2-fpm`
+`php:7.1-fpm` `php:7.3-fpm` `php:7.4-fpm` `php:8.2-fpm`
 
-`docker-compose build php-7.1-cli`
-
-`docker-compose build php-7.4-cli`
-
-`docker-compose build php-8.2-cli`
-
-`docker-compose build php-8.2-cli`
+`php:7.1-cli` `php:7.4-cli` `php:8.2-cli`
 
 ## Hyperf
+
+**镜像**
 
 `hyperf:8.2-alpine-v3.19-swoole`
 
@@ -80,8 +76,16 @@ imagick swoole xdebug xhprof
 
 `docker-compose build tengine`
 
+**镜像**
+
+`tengine`
+
 ## Magento
 
-已安装nginx
+**构建命令**
 
-`docker-compose build magento-php7.4`
+`docker-compose build magento-php7.4-nginx`
+
+**镜像**
+
+`magento:php7.4-nginx`
