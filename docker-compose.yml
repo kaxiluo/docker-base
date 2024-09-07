@@ -4,14 +4,14 @@ services:
 ################################################ 
 #######Tengine      
     tengine:
-        image: ${DOCKER_USER}/tengine
+        image: ${DOCKER_USER}/tengine:2.3.3${PLATFORM:+-${PLATFORM}}
         build:
           context: ./tengine
           args:
             - TENGINE_VERSION=2.3.3
 #######PHP7.1-FPM 
     php-7.1-fpm:
-        image: ${DOCKER_USER}/php:7.1-fpm
+        image: ${DOCKER_USER}/php:7.1-fpm${PLATFORM:+-${PLATFORM}}
         build:
           context: ./php
           args:
@@ -25,7 +25,7 @@ services:
             - INSTALL_XHPROF=false            
 #######PHP7.3-FPM  
     php-7.3-fpm:
-        image: ${DOCKER_USER}/php:7.3-fpm
+        image: ${DOCKER_USER}/php:7.3-fpm${PLATFORM:+-${PLATFORM}}
         build:
           context: ./php
           args:
@@ -39,7 +39,7 @@ services:
             - INSTALL_XHPROF=false 
 #######PHP7.4-FPM    
     php-7.4-fpm:
-        image: ${DOCKER_USER}/php:7.4-fpm
+        image: ${DOCKER_USER}/php:7.4-fpm${PLATFORM:+-${PLATFORM}}
         build:
           context: ./php
           args:
@@ -53,7 +53,7 @@ services:
             - INSTALL_XHPROF=false
 #######PHP8.2-FPM    
     php-8.2-fpm:
-        image: ${DOCKER_USER}/php:8.2-fpm
+        image: ${DOCKER_USER}/php:8.2-fpm${PLATFORM:+-${PLATFORM}}
         build:
           context: ./php
           args:
@@ -68,7 +68,7 @@ services:
 ### PHP-CLI ########################################  
 #######PHP7.1-CLI
     php-7.1-cli:
-        image: ${DOCKER_USER}/php:7.1-cli
+        image: ${DOCKER_USER}/php:7.1-cli${PLATFORM:+-${PLATFORM}}
         build:
           context: ./php
           args:
@@ -82,7 +82,7 @@ services:
             - INSTALL_XHPROF=false
 #######PHP7.4-CLI
     php-7.4-cli:
-        image: ${DOCKER_USER}/php:7.4-cli
+        image: ${DOCKER_USER}/php:7.4-cli${PLATFORM:+-${PLATFORM}}
         build:
           context: ./php
           args:
@@ -97,7 +97,7 @@ services:
 
 #######PHP8.2-CLI
     php-8.2-cli:
-        image: ${DOCKER_USER}/php:8.2-cli
+        image: ${DOCKER_USER}/php:8.2-cli${PLATFORM:+-${PLATFORM}}
         build:
           context: ./php
           args:
@@ -111,7 +111,7 @@ services:
             - INSTALL_XHPROF=false
 #######Magento
     magento-php7.4-nginx:
-        image: ${DOCKER_USER}/magento:php7.4-nginx
+        image: ${DOCKER_USER}/magento:php7.4-nginx${PLATFORM:+-${PLATFORM}}
         build:
           context: ./magento
           args:

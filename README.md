@@ -34,6 +34,24 @@ docker push registry.cn-hangzhou.aliyuncs.com/linyiyong/php:7.4-cli
 docker pull registry.cn-hangzhou.aliyuncs.com/linyiyong/php:7.4-cli
 ```
 
+**多架构镜像**
+
+```shell
+#构建arm64架构的镜像
+#mac配置环境变量PLATFORM
+docker-compose build php-8.2-cli
+#推送
+docker push registry.cn-hangzhou.aliyuncs.com/linyiyong/php:8.2-cli-arm64
+#合并
+docker manifest create registry.cn-hangzhou.aliyuncs.com/linyiyong/php:8.2-cli registry.cn-hangzhou.aliyuncs.com/linyiyong/php:8.2-cli registry.cn-hangzhou.aliyuncs.com/linyiyong/php:8.2-cli-arm64
+#查看
+docker manifest inspect registry.cn-hangzhou.aliyuncs.com/linyiyong/php:8.2-cli
+#推送
+docker manifest push registry.cn-hangzhou.aliyuncs.com/linyiyong/php:8.2-cli
+```
+
+[阿里云容器帮助文档](https://help.aliyun.com/zh/acr/use-cases/build-and-push-multi-schema-images-locally-to-container-mirroring-service?spm=a2c4g.11186623.0.0.7ef051b9gR2R1h)
+
 ## PHP
 已安装工具
 ```
@@ -60,6 +78,8 @@ imagick swoole xdebug xhprof
 
 **镜像**
 
+支持架构 amd64 arm64
+
 `php:7.1-fpm` `php:7.3-fpm` `php:7.4-fpm` `php:8.2-fpm`
 
 `php:7.1-cli` `php:7.4-cli` `php:8.2-cli`
@@ -78,6 +98,8 @@ imagick swoole xdebug xhprof
 
 **镜像**
 
+支持架构 amd64 arm64
+
 `tengine`
 
 ## Magento
@@ -87,5 +109,7 @@ imagick swoole xdebug xhprof
 `docker-compose build magento-php7.4-nginx`
 
 **镜像**
+
+支持架构 amd64 arm64
 
 `magento:php7.4-nginx`

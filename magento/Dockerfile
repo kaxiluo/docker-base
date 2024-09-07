@@ -1,6 +1,6 @@
 ARG PHP_VERSION
 
-FROM registry.cn-hangzhou.aliyuncs.com/linyiyong/php:${PHP_VERSION}-fpm
+FROM registry.cn-hangzhou.aliyuncs.com/linyiyong/php:${PHP_VERSION}-fpm${PLATFORM:+-${PLATFORM}}
 
 ARG PHP_VERSION
 
