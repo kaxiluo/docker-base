@@ -1,4 +1,4 @@
-version: "3.8"
+#version: "3.8"
 
 services: 
 ################################################ 
@@ -9,6 +9,21 @@ services:
           context: ./tengine
           args:
             - TENGINE_VERSION=2.3.3
+#######PHP5.6-FPM 
+    php-5.6-fpm:
+        image: ${DOCKER_USER}/php:5.6-fpm${PLATFORM:+-${PLATFORM}}
+        build:
+          context: ./php
+          dockerfile: Dockerfile-5.6
+          args:
+            - PHP_VERSION=5.6
+            - FPM_OR_CLI=fpm
+            - DEBIAN_RELEASE=stretch
+            - CHANGE_SOURCE=false
+            - INSTALL_IMAGEMAGICK=true
+            - INSTALL_SWOOLE=false
+            - INSTALL_XDEBUG=true
+            - INSTALL_XHPROF=false            
 #######PHP7.1-FPM 
     php-7.1-fpm:
         image: ${DOCKER_USER}/php:7.1-fpm${PLATFORM:+-${PLATFORM}}

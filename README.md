@@ -72,6 +72,8 @@ imagick swoole xdebug xhprof
 
 **构建命令**
 
+`docker-compose build php-5.6-fpm`
+
 `docker-compose build php-7.1-fpm php-7.3-fpm php-7.4-fpm php-8.2-fpm` 
 
 `docker-compose build php-7.1-cli php-7.4-cli php-8.2-cli`
@@ -79,6 +81,8 @@ imagick swoole xdebug xhprof
 **镜像**
 
 支持架构 amd64 arm64
+
+`php:5.6-fpm`
 
 `php:7.1-fpm` `php:7.3-fpm` `php:7.4-fpm` `php:8.2-fpm`
 
